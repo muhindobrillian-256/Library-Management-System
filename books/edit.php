@@ -122,7 +122,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $pdo->beginTransaction();
 
-            // Lock the book while checking its current loan count.
             $lockQuery = $pdo->prepare("
                 SELECT total_copies, available_copies
                 FROM books
