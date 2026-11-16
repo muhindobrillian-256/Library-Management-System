@@ -39,8 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $categoryId = $_POST['category_id'] ?? '';
     $totalCopies = trim($_POST['total_copies'] ?? '');
     $selectedAuthors = $_POST['authors'] ?? [];
-
-    // Validate book details.
     if ($isbn === '') {
         $errors[] = 'ISBN is required.';
     }
@@ -80,8 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $selectedAuthors = [];
         $errors[] = 'Invalid author selection.';
     }
-
-    // Validate that the selected category exists.
     if (!$errors) {
         $checkCategory = $pdo->prepare(
             "SELECT category_id FROM categories WHERE category_id = ?"
@@ -93,8 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors[] = 'The selected category does not exist.';
         }
     }
-
-    // Validate selected authors.
     $authorIds = [];
 
     if (!$errors) {
@@ -138,8 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($checkISBN->fetch()) {
                 throw new Exception('A book with this ISBN already exists.');
             }
-
-            // Insert the book.
             $stmt = $pdo->prepare(
                 "INSERT INTO books
                 (isbn, title, category_id, publisher, year_published,
@@ -458,7 +450,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         placeholder="Enter publication year"
                     >
                 </div>
-
                 <div class="form-group">
                     <label for="category_id">Book Category</label>
 
