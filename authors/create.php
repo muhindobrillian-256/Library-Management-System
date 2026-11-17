@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($country) > 100) {
         $errors[] = 'Country must not exceed 100 characters.';
     }
-
+// If no validation errors, proceed with database operation
     if (empty($errors)) {
         try {
             $checkStmt = $pdo->prepare(
