@@ -1,13 +1,22 @@
 
 <?php
+/**
+ * Add Author Page
+ * 
+ * Handles the registration of new authors in the library system, 
+ * including server-side validation, duplicate checking, and CSRF verification.
+ */
+
+// Load necessary configuration, helper functions, and enforce authentication
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../includes/auth_check.php';
 
+// Initialize variables for form state and error tracking
 $errors = [];
 $name = '';
 $country = '';
-
+// Process form submission when a POST request is received
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_post();
     verify_csrf_token();
