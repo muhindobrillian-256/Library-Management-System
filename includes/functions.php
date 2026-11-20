@@ -74,3 +74,19 @@ function require_post()
         exit('Method not allowed.');
     }
 }
+
+/**
+ * Format a database date into a clean, readable format (e.g., Nov 20, 2026)
+ */
+function formatDisplayDate($dateString) {
+    if (empty($dateString)) return 'N/A';
+    return date('M d, Y', strtotime($dateString));
+}
+
+/**
+ * Check if a loan due date has passed
+ */
+function isLoanOverdue($dueDate, $status = 'issued') {
+    if ($status === 'returned' || empty($dueDate)) return false;
+    return strtotime($dueDate) < strtotime(date('Y-m-d'));
+}

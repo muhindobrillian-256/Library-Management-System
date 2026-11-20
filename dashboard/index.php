@@ -665,6 +665,18 @@ $role = $_SESSION['role'] ?? 'User';
     </main>
 
 </div>
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('h1, h2');
+    if (header) {
+        const dateBadge = document.createElement('small');
+        dateBadge.style.display = 'block';
+        dateBadge.style.fontSize = '0.85rem';
+        dateBadge.style.opacity = '0.75';
+        dateBadge.textContent = 'Library System Active • ' + new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        header.appendChild(dateBadge);
+    }
+});
+</script>
 </body>
 </html>
