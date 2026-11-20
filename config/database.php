@@ -1,4 +1,4 @@
-
+// Database connection parameters
 <?php
 /**
  * Library Management System

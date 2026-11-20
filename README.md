@@ -79,3 +79,7 @@ The application uses prepared SQL statements, password hashing and verification,
 ## 9. Developer
 
 Library Management System - Database II CAT 2 Project.
+
+## 10. Prerequisites
+
+well done
