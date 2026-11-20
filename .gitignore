@@ -1,0 +1,21 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local database backups
+*.sql.bak
+
+# Temporary and testing files
+test_connection.php
+create_admin.php
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+
+#.DS_Store
+.DS_Store
