@@ -690,6 +690,7 @@ foreach ($books as $book) {
 
         </table>
 
+
     </div>
 
     <a href="/Library_system/dashboard/index.php" class="back">
@@ -701,6 +702,23 @@ foreach ($books as $book) {
 <footer>
     Library Management System &copy; <?= date('Y') ?>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const table = document.querySelector('table');
+    if (!table) return;
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Quick filter books by title, author, or ISBN...';
+    searchInput.className = 'form-control mb-3';
+    table.parentNode.insertBefore(searchInput, table);
 
+    searchInput.addEventListener('keyup', function() {
+        const term = this.value.toLowerCase();
+        table.querySelectorAll('tbody tr').forEach(row => {
+            row.style.display = row.textContent.toLowerCase().includes(term) ? '' : 'none';
+        });
+    });
+});
+</script>
 </body>
 </html>
