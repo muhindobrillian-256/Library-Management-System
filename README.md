@@ -83,3 +83,4 @@ Library Management System - Database II CAT 2 Project.
 ## 10. Prerequisites
 
 well done
+Project documentation reviewed and updated
