@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             max-width: 1000px;
             min-height: 570px;
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .welcome-section h1 {
-            font-size: 34px;
+            font-size: 38px;
             line-height: 1.3;
             margin-bottom: 18px;
             position: relative;
@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .login-heading h2 {
             color: #172b47;
-            font-size: 29px;
+            font-size: 32px;
             margin-bottom: 10px;
         }
 
@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             width: 100%;
             padding: 15px;
             border: 1px solid #dce2e9;
-            border-radius: 9px;
+            border-radius: 6px;
             font-size: 15px;
             color: #26374c;
             background: #f8fafc;
@@ -222,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: #d4af37;
             color: #172b47;
             border: none;
-            border-radius: 9px;
+            border-radius: 6px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
@@ -298,7 +298,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             .login-section {
-                padding: 30px 20px;
+                padding: 30px 20px;;
             }
         }
     </style>
